@@ -1,0 +1,36 @@
+{:itonami.blueprint/id "cloud-itonami-iso3166-ind-clean-air"
+ :itonami.blueprint/name "India Airshed Clean Air Portfolio"
+ :itonami.blueprint/iso3166 "IND"
+ :itonami.blueprint/domain :public-interest/airshed-clean-air
+ :itonami.blueprint/license "AGPL-3.0-or-later"
+ :itonami.blueprint/social-impact [:reduced-pm25-exposure :equitable-transition :public-evidence]
+ :itonami.blueprint/governor :clean-air-portfolio-governor
+ :itonami.blueprint/robotics false
+ :itonami.blueprint/required-technologies [:kotoba-datom :scenario-review :approval-ledger :activity-verification]
+ :itonami.blueprint/non-goals [:autonomous-enforcement :autonomous-subsidy-disbursement :publication-of-personal-data]
+ :itonami.blueprint/status :public-oss
+ :itonami.blueprint/maturity :implemented
+ :itonami.blueprint/implemented-slice
+ "clean-air.portfolio (pure priority scoring + ranking) behind
+ clean-air.governor (an independent decision LAYER, not a langgraph-clj
+ StateGraph actor -- there is no LLM advisor proposing interventions in
+ this domain, and :non-goals explicitly excludes autonomous
+ enforcement/disbursement, so the full Advisor|-Governor pattern other
+ cloud-itonami actors use would be a bigger pattern than this domain
+ needs). clean-air.governor/decide returns :hold/:escalate/:commit for
+ a candidate intervention against TWO independently-supplied ledgers
+ (clean-air.registry) -- never the candidate's own self-reported
+ :evidence/:approval flags, which is what the original scaffold trusted.
+ :hold (HARD) when clean-air.registry/evidence-complete? or
+ council-approved? independently fail against the ledger (closed
+ recognized-authority sets, non-blank citation+URL, quorum-backed
+ for>against majority vote -- clean-air.regulatory's closed
+ recognized-evidence-authorities / recognized-approval-bodies, modeled
+ on NCAP's real city/district/state/national approval chain).
+ :escalate (SOFT) for a one-vote approval margin or a single-source
+ (uncorroborated) evidence dossier -- verified but flagged for a human
+ council member. :commit only when independently clean.
+ clean-air.regulatory carries citation-grounded CPCB NAAQS 2009,
+ WHO 2021 Global Air Quality Guidelines, and NCAP institutional facts
+ (launch, target revision, funding, 2026 progress) -- see that
+ namespace's own docstrings for sources. 61 tests, 114 assertions."}

@@ -28,7 +28,7 @@
   independently populated (e.g. from a real audit-ledger store) before
   they reach here; this namespace only verifies their CONTENT, it does
   not fetch or trust it."
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [clean-air.regulatory :as regulatory]))
 
 (def required-evidence-types

@@ -17,7 +17,7 @@ or ranking behavior.
 ## Rules
 
 - Do not commit real intervention, beneficiary, or personal data — this
-  repo's own ledger fixtures under `test/clean_air/fixtures.clj` are
+  repo's own ledger fixtures under `test/clean_air/fixtures.kotoba` are
   synthetic/illustrative test data, and new tests should follow that
   convention.
 - Never let `clean-air.portfolio` trust a candidate's own self-reported

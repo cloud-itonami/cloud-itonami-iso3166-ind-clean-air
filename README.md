@@ -52,7 +52,7 @@ see `:itonami.blueprint/non-goals`:
   not a live feed.
 - Is NOT a real NCAP City Action Plan, a real CPCB determination, or a
   real council vote — every example ledger record in this repo's own
-  tests (`test/clean_air/fixtures.clj`) is SYNTHETIC/ILLUSTRATIVE test
+  tests (`test/clean_air/fixtures.kotoba`) is SYNTHETIC/ILLUSTRATIVE test
   data, not a claim that any specific intervention is a real,
   currently-approved grant.
 - Is NOT a langgraph-clj StateGraph actor with an LLM advisor. There is

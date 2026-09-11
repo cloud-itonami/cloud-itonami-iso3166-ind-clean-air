@@ -137,8 +137,8 @@ full citation on each var:
 ## Development
 
 ```bash
-clojure -M:test
-clojure -M:lint
+kbb -M:test
+kbb -M:lint
 ```
 
 61 tests / 114 assertions as of this build (`clean_air.regulatory-test`,

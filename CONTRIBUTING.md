@@ -7,8 +7,8 @@ and the open business/operator model.
 ## Development
 
 ```bash
-clojure -M:test
-clojure -M:lint
+kbb -M:test
+kbb -M:lint
 ```
 
 Keep changes small and include tests for governor, ledger-verification,
